@@ -13,10 +13,4 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', require('./routes/index'))
 
-let hello = {
-  name: "Ongki",
-  last: "Herlambang",
-  age: 40,
-}
-
 module.exports = app
