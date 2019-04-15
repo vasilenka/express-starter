@@ -5,7 +5,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Customs
 .DS_Store
+.env
 
 # Runtime data
 pids

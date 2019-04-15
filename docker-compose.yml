@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  mongo:
+    container_name: mongo
+    image: mongo
+    env_file: .env
+    restart: always
+    networks:
+      - expressnet
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data:/data/db
+
+  app:
+    container_name: express
+    restart: always
+    env_file: .env
+    volumes:
+      - .:/usr/src/app
+      - ./uploads:/user/src/app/public/images
+      - /usr/src/app/node_modules
+    build: .
+    ports:
+      - '3000:3000'
+    networks:
+      - expressnet
+
+networks:
+  expressnet:
